@@ -83,12 +83,11 @@ dependencies:
   # App Information
   # =========================
   package_info_plus: ^10.2.1
+  flutter_svg: ^2.3.0
 
   # =========================
   # In-App Rating
   # =========================
-  in_app_review: ^2.0.12
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -109,8 +108,7 @@ flutter:
   # Assets
   # =========================
   assets:
-    - assets/images/cities/
-    - assets/images/weather/
+    - assets/images/
     - assets/lottie/
     - assets/data/
 
