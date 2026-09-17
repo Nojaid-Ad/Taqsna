@@ -1,0 +1,47 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/generated_plugin_registrant.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+  errors:
+    # تحويل التحذيرات إلى أخطاء تمنع الـ Build في حال وجود print أو TODO
+    avoid_print: error
+    todo: warning
+    dead_code: error
+
+linter:
+  rules:
+    # --- قواعد النظافة والهيكلية (Clean Code) ---
+    always_declare_return_types: true        # إجبار تحديد نوع البيانات العائدة من الدوال
+    cancel_subscriptions: true               # منع تسريب الذاكرة (Memory Leaks) في الـ Streams
+    close_sinks: true                        # إغلاق الـ Sinks دائماً
+    prefer_final_locals: true                # تشجيع استخدام final للمتغيرات المحلية
+    prefer_final_fields: true                # تشجيع استخدام final للخصائص داخل الكلاس
+    unnecessary_this: true                   # إزالة this عندما لا يكون لها داعٍ
+    camel_case_types: true                   # الالتزام بتسمية الكلاسات CamelCase
+    library_prefixes: true                   # تنظيم استدعاء المكتبات
+
+    # --- قواعد الأداء (Performance & UI) ---
+    prefer_const_constructors: true          # أساسي لتقليل استهلاك الـ RAM
+    prefer_const_literals_to_create_immutables: true
+    prefer_const_declarations: true
+    avoid_unnecessary_containers: true      # منع الحاويات الزائدة التي تبطئ الرسم
+    sized_box_for_whitespace: true          # استخدام SizedBox بدلاً من Container فارغ
+    use_key_in_widget_constructors: true    # ضروري لإدارة حالة الوجت بشكل صحيح
+
+    # --- قواعد مرحلة النشر (Final Production) ---
+    avoid_print: true                       # سيظهر لك خطأ أحمر إذا نسيت print واحدة
+    no_logic_in_create_state: true          # منع كتابة منطق برمي داخل create state
+    
+    # --- قواعد التنسيق (Style) ---
+    curly_braces_in_flow_control_structures: true # إجبار الأقواس في if/else لمنع أخطاء المنطق
+    prefer_single_quotes: true               # توحيد شكل النصوص (علامة تنصيص مفردة)
